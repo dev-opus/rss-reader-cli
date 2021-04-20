@@ -1,3 +1,6 @@
+const Parser = require('rss-parser');
+const parser = new Parser();
+
 const inputData = process.argv.slice(2);
 
 const vetData = data => {
@@ -15,4 +18,12 @@ const handleAsyncError = fn => {
       console.error('an error occurred', err.message)
     );
   };
+};
+
+const getFeedData = async url => {
+  const feed = await parser.parseURL(url);
+  const { description, items } = feed;
+
+  if (!description) return [items];
+  return [description, items];
 };
