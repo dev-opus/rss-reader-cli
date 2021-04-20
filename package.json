@@ -1,0 +1,9 @@
+{
+  "name": "rss-reader-cli",
+  "version": "1.0.0",
+  "description": "a RSS Feed Reader on the CLI",
+  "main": "app.js",
+  "author": "Victor Orlunda <vicorlunda@gmail.com>",
+  "license": "MIT",
+  "private": true
+}
