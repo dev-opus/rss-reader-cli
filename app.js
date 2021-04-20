@@ -65,3 +65,36 @@ const printFeedData = async data => {
     });
   }
 };
+
+const run = async () => {
+  const vettedInputLinks = vettData(inputData);
+
+  if (!vettedInputLinks) return;
+
+  if (vettedInputLinks.length === 1) {
+    const vettedGetFeedData = handleAsyncError(getFeedData);
+    const vettedPrintFeedData = handleAsyncError(printFeedData);
+    const feeds = await vettedGetFeedData(vettedInputLinks[0]);
+    await vettedPrintFeedData(feeds);
+
+    return;
+  }
+
+  if (vettedInputLinks.length > 1) {
+    const vettedGetFeedData = handleAsyncError(getFeedData);
+    const vettedPrintFeedData = handleAsyncError(printFeedData);
+    for (let i = 0; i < vettedInputLinks.length; i++) {
+      if (i < 1) {
+        const feeds = await vettedGetFeedData(vettedInputLinks[i]);
+        console.log('---- Printing feeds from the first link ----\n\n');
+        await vettedPrintFeedData(feeds);
+      } else {
+        const feeds = await vettedGetFeedData(vettedInputLinks[i]);
+        console.log('---- Printing feeds from the second link ----\n\n');
+        await vettedPrintFeedData(feeds);
+      }
+    }
+  }
+};
+
+run();
