@@ -6,6 +6,9 @@
   "author": "Victor Orlunda <vicorlunda@gmail.com>",
   "license": "MIT",
   "private": true,
+  "scripts": {
+    "start": "node app"
+  },
   "dependencies": {
     "rss-parser": "^3.12.0"
   }
