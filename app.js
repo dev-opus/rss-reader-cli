@@ -8,3 +8,11 @@ const vetData = data => {
     )
   );
 };
+
+const handleAsyncError = fn => {
+  return args => {
+    return fn(args).catch(err =>
+      console.error('an error occurred', err.message)
+    );
+  };
+};
