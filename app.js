@@ -3,13 +3,18 @@ const parser = new Parser();
 
 const inputData = process.argv.slice(2);
 
-const vetData = data => {
-  return (
-    data.length > 2 &&
-    console.log(
+const vettData = data => {
+  if (data.length < 1)
+    return console.log(
+      'program aborted, please supply at least one rss-link for processing'
+    );
+
+  if (data.length > 2)
+    return console.log(
       'Maximum number of links passed! Please pass in 2 or less links'
-    )
-  );
+    );
+
+  return data;
 };
 
 const handleAsyncError = fn => {
