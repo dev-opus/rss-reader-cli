@@ -14,7 +14,7 @@ In your terminal, do the following:
 
 - type **yarn start** ``<link1 link2>`` or  **npm start** ``<link1 link2>`` **PS**. you can choose to run with only 1 link, but maximum is 2
 
-- exapmple **yarn start https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/amazon-elcr-release-notes.rss https://www.reddit.com/.rss**
+- exapmple ``yarn start https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/amazon-elcr-release-notes.rss https://www.reddit.com/.rss``
 
 ## Dependencies
 
