@@ -1,5 +1,6 @@
 const Parser = require('rss-parser');
 const parser = new Parser();
+const { printFeedData } = require('./utils/printer');
 
 const inputData = process.argv.slice(2);
 
